@@ -4,12 +4,10 @@ import requests
 import os
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
-# Токен теперь берётся из переменных окружения
+# Токен: если есть переменная BOT_TOKEN — берём её, иначе используем токен из кода
 TOKEN = os.getenv("BOT_TOKEN")
-
 if not TOKEN:
-    print("❌ Ошибка: переменная BOT_TOKEN не найдена!")
-    exit(1)
+    TOKEN = "vk1.a.Lp1rtBQtmE3o-GJt8sC8ZRcHweM4RjYgTAOtklxkZVxsz2AIi0YorGQ59TTn1Z022whgovgp2LQy9yr4oPew7rKpQNgUaG-wpND_MpP32D-mElfyDUBxgbsHY5CA7XR1AnwBxj-V_EJblgxBY2eLYsySTlb5cQUSHYA1tqIXPY3uIPmN2LVlLdON6NYhNYVAPRnEvVi8xx-8GqazNDMmXA"
 
 GROUP_ID = 241007513
 
@@ -43,8 +41,6 @@ for event in longpoll.listen():
         text = msg['text'].lower().strip()
         peer_id = msg['peer_id']
         from_id = msg['from_id']
-
-        # ——— ЛИЧКА И БЕСЕДА ———
 
         # УДАР
         if text == "/удар-ученик":
@@ -231,8 +227,8 @@ for event in longpoll.listen():
                 ("Вы нашли душистую розу.", 6),
                 ("Вы нашли душистую лаванду.", 6),
                 ("Вы нашли душистую фиалку.", 6),
+                ("Вы почувствовали подозрительный запах. [Сообщите отвечающему Вашего племени с доказательством нахождения неизвестного запаха]", 1),
                 ("Вы нашли душистый лилейник. Не трогайте его и не срывайте. [/собрать-лилейник]", 6),
-                ("Вы почувствовали подозрительный запах. [Сообщите отвечающему Вашего племени с доказательством нахождения неизвестного запаха]", 6),
                 ("Вы нашли... Вы нашли.... Кажется... Кажется это крошечный смытый дождем самородок золота, застрявший в песчанистом грунте! А. Всё же нет. Вам показалось.", 6),
                 ("Вы нашли... Спящего колорадского жука, зарывшегося глубоко в землю. Жужжит!", 6)
             ])
