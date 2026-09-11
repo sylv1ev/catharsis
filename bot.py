@@ -769,3 +769,10 @@ for event in longpoll.listen():
                 ("я так и не пон аня и вася канон? они аси? аськи? саськи?", 30)
             ])
             send_message(peer_id, result)
+
+        elif text == "/вася":
+            result = weighted_random([
+                ("блятьсукапиздецёбаныйнахуйврот..", 50),
+                ("щучка", 100)
+            ])
+            send_message(peer_id, result)
