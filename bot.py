@@ -773,6 +773,6 @@ for event in longpoll.listen():
         elif text == "/вася":
             result = weighted_random([
                 ("блятьсукапиздецёбаныйнахуйврот..", 50),
-                ("щучка", 100)
+                ("щучка", 50)
             ])
             send_message(peer_id, result)
