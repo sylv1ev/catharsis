@@ -350,7 +350,7 @@ for event in longpoll.listen():
             send_message(peer_id, result)
 
         # === ОХОТА ===
-        elif text == "/охота-леснаясоня":
+        elif text == "/охота-лесная-соня":
             result = weighted_random([
                 ("Вы поймали хилую лесную соню!", 75),
                 ("Вы поймали нормальную лесную соню!", 75),
